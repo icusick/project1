@@ -10,9 +10,9 @@
 	width: 500px;
 	height: 250px;
 	position: absolute;
-	border: solid red;
-	border-radius: 360% 360% 0 0;
-	top: 20px;
+	/*border: solid red;
+	border-radius: 360% 360% 0 0;*/
+
 /*	border-top-left-radius: 360%;
 	border-top-right-radius: 360%;*/
 }
@@ -20,7 +20,56 @@
 .bottom-circle {
 	width: 500px;
 	height: 250px;
+	position: absolute;
+	margin-top: 250px;
+	display: block;
+	/*border: solid blue;
+	border-radius: 0 0 360% 360%;*/
 	/*position: absolute;
 	border: solid red;
 	border-radius: 0 0 360% 360%;*/
 }
+
+.top-left {
+	width: 245px;
+	height: 250px;
+	float: left;
+	border: solid green;
+	border-radius: 360% 0 0 0;
+}
+
+.top-right {
+	width: 243px;
+	height: 250px;
+	float: right;
+	border: solid green;
+	border-radius: 0 360% 0 0;
+}
+
+.bottom-left {
+	width: 245px;
+	height: 245px;
+	float: left;
+	border: solid green;
+	border-radius: 0 0 0 360%;
+}
+
+.bottom-right {
+	width: 243px;
+	height: 245px;
+	float: right;
+	border: solid green;
+	border-radius: 0 0 360% 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
