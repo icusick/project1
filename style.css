@@ -10,6 +10,7 @@
 	width: 500px;
 	height: 250px;
 	position: absolute;
+
 	/*border: solid red;
 	border-radius: 360% 360% 0 0;*/
 
@@ -23,6 +24,7 @@
 	position: absolute;
 	margin-top: 250px;
 	display: block;
+
 	/*border: solid blue;
 	border-radius: 0 0 360% 360%;*/
 	/*position: absolute;
@@ -30,36 +32,60 @@
 	border-radius: 0 0 360% 360%;*/
 }
 
-.top-left {
+#top-left {
 	width: 245px;
 	height: 250px;
 	float: left;
-	border: solid green;
+	border: solid black;
 	border-radius: 360% 0 0 0;
+	
 }
 
-.top-right {
+.red {
+	background: red;
+
+}
+
+#top-right {
 	width: 243px;
 	height: 250px;
 	float: right;
-	border: solid green;
+	border: solid black;
 	border-radius: 0 360% 0 0;
+	
+}
+.yellow {
+	background: yellow;
 }
 
-.bottom-left {
+#bottom-left {
 	width: 245px;
 	height: 245px;
 	float: left;
-	border: solid green;
+	border: solid black;
 	border-radius: 0 0 0 360%;
+	
 }
 
-.bottom-right {
+.green {
+	background: green;
+}
+
+#bottom-right {
 	width: 243px;
 	height: 245px;
 	float: right;
-	border: solid green;
+	border: solid black;
 	border-radius: 0 0 360% 0;
+	
+}
+
+.blue {
+	background: blue;
+}
+
+.flash {
+	background: black;
 }
 
 
