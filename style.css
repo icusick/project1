@@ -4,6 +4,7 @@
 	width: 500px;
 	height: 500px;
 	margin: 0 auto;
+
 }
 
 .top-circle {
@@ -32,60 +33,61 @@
 	border-radius: 0 0 360% 360%;*/
 }
 
-#top-left {
+.top-left {
 	width: 245px;
 	height: 250px;
 	float: left;
 	border: solid black;
 	border-radius: 360% 0 0 0;
-	
+	background: red;
 }
 
-.red {
+/*.background.red {
 	background: red;
 
-}
+}*/
 
-#top-right {
+.top-right {
 	width: 243px;
-	height: 250px;
+	height: 245px;
 	float: right;
 	border: solid black;
 	border-radius: 0 360% 0 0;
-	
-}
-.yellow {
 	background: yellow;
 }
+/*.background.yellow {
+	background: yellow;
+}*/
 
-#bottom-left {
+.bottom-left {
 	width: 245px;
 	height: 245px;
 	float: left;
 	border: solid black;
 	border-radius: 0 0 0 360%;
-	
-}
-
-.green {
 	background: green;
 }
 
-#bottom-right {
+/*.background.green {
+	background: green;*/
+
+
+.bottom-right {
+	
 	width: 243px;
 	height: 245px;
 	float: right;
 	border: solid black;
 	border-radius: 0 0 360% 0;
-	
-}
-
-.blue {
 	background: blue;
 }
 
-.flash {
-	background: black;
+/*.background.blue {
+	background: blue;*/
+}
+
+.hidden {
+	visibility: hidden;
 }
 
 
