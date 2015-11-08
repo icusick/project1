@@ -26,15 +26,6 @@ pointCounter = 1;
 		return flashIt;
 	};
 
-// var flashTwo = function(event) {
-// 	var target = event.target;
-// 	target.style.visibility = 'hidden';
-	
-// 	setTimeout(function() { 
-// 		target.style.visibility = 'visible'; 
-// 	}, 200);
-// 	playerArray.push(target.selector);
-// };
 
 
 
@@ -47,27 +38,25 @@ pointCounter = 1;
 						setTimeout(hide($computerArray[i]), (i+1)*400);
 						setTimeout(reappear($computerArray[i]), (i+1)*800);
 					}
+
 				}
-			// 	if ($computerArray === playerArray) {
-			// 		points++
-			// 		points.text = points;
-			// 	} else {
-			// 		$playerArray.length = 0;
-			// 	}
-			// }
-		
-		
+				iDontEvenKnowAnymore();
+
 	};
+			
+		
+		
+	// };
 	var iDontEvenKnowAnymore = function () {
-		if ($playerArray === $computerArray) {
+		if (playerArray === $computerArray) {
 			pointCounter++;
 			$points.text("Points: " + pointCounter);
 			$computerArray.push(_.sample($colorArray))
 		} else {
-			$playerArray.length = 0;
+			playerArray.length = 0;
 		}
-	}
-
+	};
+    
 
 // computerArray needs to randomly select a certain number of elements from  
 
@@ -111,9 +100,12 @@ $start.on('click', function() {
 	$topRight.on('click', flash($topRight));
 	$bottomRight.on('click', flash($bottomRight));
 	$bottomLeft.on('click', flash($bottomLeft));
+	$html.on('keypress', flashComputer);
 });
 
-$html.on('keypress', flashComputer);
+
+
+
 
 });
 
