@@ -37,8 +37,8 @@ pointCounter = 0;
 			
 				if (event.keyCode === 13) {
 					for (var i = 0; i < $computerArray.length; i++) {
-						setTimeout(hide($computerArray[i]), (i+1)*400);
-						setTimeout(reappear($computerArray[i]), (i+1)*600);
+						setTimeout(hide($computerArray[i]), (i+1)*200);
+						setTimeout(reappear($computerArray[i]), (i+1)*400);
 					}
 
 				}
@@ -80,6 +80,7 @@ pointCounter = 0;
 
 	var hide = function(arrayEl) {
 		var fuckingClosure = function(){
+			
 			arrayEl.addClass('hidden');
 		}
 		return fuckingClosure;
