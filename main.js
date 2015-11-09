@@ -8,7 +8,8 @@ var $bottomRight = $('.bottom-right');
 var playerArray = [];
 var $colorArray = [$topLeft, $topRight, $bottomLeft, $bottomRight];
 var $computerArray = [$topLeft, $topRight, $bottomLeft, $bottomRight];
-pointCounter = 1;
+var $checker = $('.checker');
+pointCounter = 0;
 // var i = 0;
 
 
@@ -24,6 +25,7 @@ pointCounter = 1;
 			playerArray.push($target);
 		};
 		return flashIt;
+		
 	};
 
 
@@ -36,27 +38,42 @@ pointCounter = 1;
 				if (event.keyCode === 13) {
 					for (var i = 0; i < $computerArray.length; i++) {
 						setTimeout(hide($computerArray[i]), (i+1)*400);
-						setTimeout(reappear($computerArray[i]), (i+1)*800);
+						setTimeout(reappear($computerArray[i]), (i+1)*600);
 					}
 
 				}
-				iDontEvenKnowAnymore();
+				
 
 	};
 			
 		
 		
-	// };
-	var iDontEvenKnowAnymore = function () {
-		if (playerArray === $computerArray) {
-			pointCounter++;
+	var gameOver = function () {
+		if (pointCounter === 10) {
+			window.alert("Congratulations! You have an excellent memory.")
+			pointCounter = 0
+			points.text("Points: " + 0);
+		}
+	}
+	
+	var didYouGetItRight = function () {
+		for (var x = 0; x < 10; x++) {
+			var truth = $computerArray[x] === playerArray[x]
+		}
+		if ((playerArray.length === $computerArray.length) && truth) {
+			console.log('right');
+			pointCounter  += 1;
 			$points.text("Points: " + pointCounter);
+			window.alert("Yes!");
 			$computerArray.push(_.sample($colorArray))
-		} else {
 			playerArray.length = 0;
+		} else {
+			console.log('wrong');
+			playerArray.length = 0;
+			window.alert("No! Idiot!");
 		}
 	};
-    
+
 
 // computerArray needs to randomly select a certain number of elements from  
 
@@ -84,6 +101,7 @@ $bottomLeft = $('.bottom-left');
 $bottomRight = $('.bottom-right');
 $points = $('.points');
 $html = $('html');
+$checker = $('.checker');
 
 
 
@@ -95,12 +113,14 @@ $html = $('html');
 // $bottomLeft.on('click', flashTwo);
 
 $start.on('click', function() {
+	window.alert("To play this game press enter and note which colors are flashed. You have to click the colors in the order that they were flashed to you. Press the Did I get it right? button in order to see if you got it right.")
 	console.log('event listeners added')
 	$topLeft.on('click', flash($topLeft));
 	$topRight.on('click', flash($topRight));
 	$bottomRight.on('click', flash($bottomRight));
 	$bottomLeft.on('click', flash($bottomLeft));
 	$html.on('keypress', flashComputer);
+	$checker.on('click', didYouGetItRight)
 });
 
 
