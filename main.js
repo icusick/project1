@@ -53,6 +53,7 @@ pointCounter = 0;
 			window.alert("Congratulations! You have an excellent memory.")
 			pointCounter = 0
 			points.text("Points: " + 0);
+			_.shuffle($computerArray);
 		}
 	}
 	
@@ -70,7 +71,7 @@ pointCounter = 0;
 		} else {
 			console.log('wrong');
 			playerArray.length = 0;
-			window.alert("No! Idiot!");
+			window.alert("No!");
 		}
 	};
 
@@ -90,6 +91,10 @@ pointCounter = 0;
 		return fuckingClosure;
 	}
 
+	var restart = function() {
+		console.log('shuffle');
+		$computerArray = _.shuffle([$topLeft, $topRight, $bottomLeft, $bottomRight]);
+	};
 
 $(document).ready(function() {
 
@@ -102,6 +107,7 @@ $bottomRight = $('.bottom-right');
 $points = $('.points');
 $html = $('html');
 $checker = $('.checker');
+$shuffle= $('.restart');
 
 
 
@@ -113,14 +119,15 @@ $checker = $('.checker');
 // $bottomLeft.on('click', flashTwo);
 
 $start.on('click', function() {
-	window.alert("To play this game press enter and note which colors are flashed. You have to click the colors in the order that they were flashed to you. Press the Did I get it right? button in order to see if you got it right.")
+	window.alert("To play this game press enter and note which colors are flashed. You have to click the colors in the order that they were flashed to you. Press the Did I get it right? button in order to see if you got it right. If you did, you will earn one point. If not, try again. When you've gotten it right, press enter again. This time there will be one more color added to the sequence.")
 	console.log('event listeners added')
 	$topLeft.on('click', flash($topLeft));
 	$topRight.on('click', flash($topRight));
 	$bottomRight.on('click', flash($bottomRight));
 	$bottomLeft.on('click', flash($bottomLeft));
 	$html.on('keypress', flashComputer);
-	$checker.on('click', didYouGetItRight)
+	$checker.on('click', didYouGetItRight);
+	$shuffle.on('click', restart);
 });
 
 
