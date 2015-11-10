@@ -33,15 +33,27 @@ pointCounter = 0;
 
 	var flashComputer = function() {
 			
-			// lines 23-25 need to happen to each element in computerArray. computerArray needs to be an array of randomly selected elements from colorArray
+	// 		// lines 23-25 need to happen to each element in computerArray. computerArray needs to be an array of randomly selected elements from colorArray. lines 40-41 were JULIA PEARSON'S IDEA.
 			
 				if (event.keyCode === 13) {
 					for (var i = 0; i < $computerArray.length; i++) {
-						setTimeout(hide($computerArray[i]), (i+1)*200);
-						setTimeout(reappear($computerArray[i]), (i+1)*400);
+						setTimeout(hide($computerArray[i]), (i+1)*300);
+						// setTimeout(reappear($computerArray[i]), (i+1)*400);
 					}
 
 				}
+				// do the karaoke thing here!!!!! 
+				// 	var i = 0
+				// var flashTheComputer = function() {
+				// 	if (i<computerArray.length) {
+				// 	computerArray[i].addClass('hidden')
+				// 	setTimeout(function() { $target.removeClass('hidden') }, 200);
+				// 	i++;
+				// 	} else {
+				// 		clearInterval(flashTheComputer);
+				// 	}
+				// }
+				// setInterval(flashTheComputer, 500);
 				
 
 	};
@@ -77,12 +89,14 @@ pointCounter = 0;
 
 
 // computerArray needs to randomly select a certain number of elements from  
-
+// julia pearson: helped me with closures and also 
 	var hide = function(arrayEl) {
 		var fuckingClosure = function(){
 			
 			arrayEl.addClass('hidden');
+			setTimeout(reappear(arrayEl), 200);
 		}
+
 		return fuckingClosure;
 	}
 	var reappear = function(arrayEl) {
