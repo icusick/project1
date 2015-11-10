@@ -56,7 +56,8 @@ start button will have an event listener that fires a function for lighting up a
 
 	}
 
-
+var newLength = fruits.push("Orange");
+// ["Apple", "Banana", "Orange"]
 
 
 
