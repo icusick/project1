@@ -23,8 +23,11 @@ pointCounter = 0;
 			
 			setTimeout(function() { $target.removeClass('hidden') }, 200);
 			playerArray.push($target);
+			// if (event.keyCode === 13) {
+			// 	didYouGetItRight();
 		};
 		return flashIt;
+		// didYouGetItRight();
 		
 	};
 
@@ -35,11 +38,11 @@ pointCounter = 0;
 			
 	// 		// lines 23-25 need to happen to each element in computerArray. computerArray needs to be an array of randomly selected elements from colorArray. lines 40-41 were JULIA PEARSON'S IDEA.
 			
-				if (event.keyCode === 13) {
+				// if (event.keyCode === 13) {
 					for (var i = 0; i < $computerArray.length; i++) {
-						setTimeout(hide($computerArray[i]), (i+1)*300);
+						setTimeout(hide($computerArray[i]), (i+1)*400);
 						// setTimeout(reappear($computerArray[i]), (i+1)*400);
-					}
+					// }
 
 				}
 				// do the karaoke thing here!!!!! 
@@ -114,6 +117,7 @@ pointCounter = 0;
 $(document).ready(function() {
 
 
+$play = $('.play');
 $start = $('.start');
 $topLeft = $('.top-left');
 $topRight = $('.top-right');
@@ -140,9 +144,10 @@ $start.on('click', function() {
 	$topRight.on('click', flash($topRight));
 	$bottomRight.on('click', flash($bottomRight));
 	$bottomLeft.on('click', flash($bottomLeft));
-	$html.on('keypress', flashComputer);
-	$checker.on('click', didYouGetItRight);
+	$html.on('keypress', didYouGetItRight);
+	// $checker.on('click', didYouGetItRight);
 	$shuffle.on('click', restart);
+	$play.on('click', flashComputer)
 });
 
 
