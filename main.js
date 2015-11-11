@@ -64,14 +64,12 @@ pointCounter = 0;
 		
 		
 	var gameOver = function () {
-		if (pointCounter === 10) {
-			window.alert("Congratulations! You have an excellent memory. Play again, this time with a new starting sequence.")
-			pointCounter = 0
-			points.text("Points: " + 0);
-			playerArray.length = 0;
-			computerArray.length = 4;
-			_.shuffle($computerArray);
-		}
+		pointCounter = 0
+		$points.text("Points: ");
+		playerArray.length = 0;
+		$computerArray.length = 4;
+		_.shuffle($computerArray);
+		
 	}
 	
 	var didYouGetItRight = function () {
@@ -149,7 +147,7 @@ $start.on('click', function() {
 	$bottomLeft.on('click', flash($bottomLeft));
 	$html.on('keypress', didYouGetItRight);
 	// $checker.on('click', didYouGetItRight);
-	$restart.on('click', restart);
+	$restart.on('click', gameOver);
 	$play.on('click', flashComputer)
 });
 
