@@ -130,10 +130,18 @@
 	font-weight: lighter;
 	font-size: 20px;
 	left: 0;
-	margin-top: 15px;
+	margin-top: 25px;
 	cursor: pointer;
 }
 
+.play {
+	font-family: helvetica;
+	font-size: 24px;
+	font-weight: lighter;
+	cursor: pointer;
+	margin-top: 15px;
+	left: 0;
+}
 
 
 

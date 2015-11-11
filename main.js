@@ -7,7 +7,7 @@ var $bottomLeft = $('.bottom-left');
 var $bottomRight = $('.bottom-right');
 var playerArray = [];
 var $colorArray = [$topLeft, $topRight, $bottomLeft, $bottomRight];
-var $computerArray = [$topLeft, $topRight, $bottomLeft, $bottomRight];
+var $computerArray = _.shuffle($colorArray);
 var $checker = $('.checker');
 pointCounter = 0;
 // var i = 0;
@@ -65,9 +65,11 @@ pointCounter = 0;
 		
 	var gameOver = function () {
 		if (pointCounter === 10) {
-			window.alert("Congratulations! You have an excellent memory.")
+			window.alert("Congratulations! You have an excellent memory. Play again, this time with a new starting sequence.")
 			pointCounter = 0
 			points.text("Points: " + 0);
+			playerArray.length = 0;
+			computerArray.length = 4;
 			_.shuffle($computerArray);
 		}
 	}
@@ -88,6 +90,7 @@ pointCounter = 0;
 			playerArray.length = 0;
 			window.alert("No!");
 		}
+		flashComputer();
 	};
 
 
@@ -126,7 +129,7 @@ $bottomRight = $('.bottom-right');
 $points = $('.points');
 $html = $('html');
 $checker = $('.checker');
-$shuffle= $('.restart');
+$restart= $('.restart');
 
 
 
@@ -146,7 +149,7 @@ $start.on('click', function() {
 	$bottomLeft.on('click', flash($bottomLeft));
 	$html.on('keypress', didYouGetItRight);
 	// $checker.on('click', didYouGetItRight);
-	$shuffle.on('click', restart);
+	$restart.on('click', restart);
 	$play.on('click', flashComputer)
 });
 
